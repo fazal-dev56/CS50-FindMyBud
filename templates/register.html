@@ -1,0 +1,18 @@
+{% extends "form.html" %}
+
+{% block form_fields %}
+    <label for="name" class="form-label">Full Name</label>
+    <input id="name" type="text" name="name" class="form-control mb-3" placeholder="Name" required>
+
+    <label for="email" class="form-label">Email</label>
+    <input id="email" type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+
+    <label for="phone" class="form-label">Phone Number(Optional)</label>
+    <input id="phone" type="tel" name="phone" class="form-control mb-3" placeholder="Phone">
+
+    <label for="password" class="form-label">Password</label>
+    <input id="password" type="password" name="password" class="form-control mb-3" placeholder="Enter password (min. 6 characters)" required>
+
+    <label for="confirm_password" class="form-label">Confirm Password</label>
+    <input id="confirm_password" type="password" name="confirmation" class="form-control mb-3" placeholder="Re-enter password" required>
+{% endblock %}

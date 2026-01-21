@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Welcome to FindMyBud</h2>
+
+    <p>Help people find or return a lost earbud.</p>
+
+    <div class="actions">
+        <a href="/report?mode=found" class="btn btn-success">I Found an Earbud</a>
+        <a href="/report?mode=lost" class="btn btn-danger">I Lost an Earbud</a>
+    </div>
+    {% set is_my_reports = false %}
+    {% if reports %}
+        <div class="reports-grid">
+            {% for report in reports %}
+                {% include "partials/report_card.html" %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="mt-4">No reports yet. Be the first to post one.</p>
+    {% endif %}
+{% endblock %}

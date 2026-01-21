@@ -1,0 +1,56 @@
+{% extends "form.html" %}
+
+{% block form_fields %}
+<!--Type of the report, lost or found an aerbud-->
+    <input type="hidden" name="type" value="{{ mode }}">
+
+    {% if mode == "lost" %}
+        <p class="text-muted small">You are reporting a lost aerbud.</p>
+    {% elif mode == "found" %}
+        <p class="text-muted small">You are reporting a found aerbud.</p>
+    {% endif %}
+
+<!--Common fields for both lost and found-->
+    <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input class="form-control" name="brand" list="brands" id="brand" placeholder="Select or type a brand" required>
+        <datalist id="brands">
+            <option value="apple">
+            <option value="Samsung">
+            <option value="Sony">
+            <option value="Google">
+            <option value="OnePlus">
+            <option value="Bose">
+            <option value="Jabra">
+            <option value="Huawei">
+            <option value="Xiaomi">
+            <option value="Dany">
+        </datalist>
+    </div>
+
+    <label for="model" class="form-label">Model</label>
+    <input type="text" name="model" class="form-control mb-3" placeholder="e.g. AirPods 2nd Gen" id="model" required>
+
+    <label for="part" class="form-label">Which part?</label>
+    <input id="part" type="text" name="part" class="form-control mb-3" placeholder="e.g. Left Earbud" required>
+
+    <label for="color" class="form-label">Color</label>
+    <input type="text" name="color" class="form-control mb-3" placeholder="e.g. White" id="color" required>
+
+    <label for="date" class="form-label">Date</label>
+    <input type="date" name="date" class="form-control mb-3" placeholder="e.g. White" id="date" required>
+
+    <label for="location" class="form-label">Location</label>
+    <input type="text" name="location_text" class="form-control mb-3" placeholder="e.g. Shah Faisal Masjid, Islamabad" id="location" required>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" name="description" class="form-control" rows="4" placeholder="Describe the Bud here...!"></textarea>
+    </div>
+
+    <label>Photos (Optional)</label>
+    <input type="file" name="photo1" accept="image/*" class="form-control mb-3">
+    <input type="file" name="photo2" accept="image/*" class="form-control mb-3">
+
+
+{% endblock %}

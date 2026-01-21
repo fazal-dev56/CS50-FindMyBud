@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h2 class="mb-4">My Reports</h2>
+
+    {% if reports %}
+        <div class="reports-grid">
+            {% for report in reports %}
+                {% set is_my_reports = true %}
+                {% include "partials/report_card.html" %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You haven’t submitted any reports yet.</p>
+    {% endif %}
+
+{% endblock %}

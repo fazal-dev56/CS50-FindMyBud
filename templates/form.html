@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="card p-4 shadow-sm rounded-4 form-gradiant-card" style="max-width: 400px; margin: auto;">
+        <div class="text-center mb-3">
+            <h4>{{ title }}</h4>
+        </div>
+
+        <form action="{{  action  }}" method="POST" enctype="multipart/form-data">
+
+            {% block form_fields %}{% endblock %}
+
+            <button type="submit" class="btn btn-light w-100 mt-3">
+                {{ button_text }}
+            </button>
+        </form>
+    </div>
+{% endblock %}

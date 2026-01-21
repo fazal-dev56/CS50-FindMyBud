@@ -1,0 +1,9 @@
+{% extends "form.html" %}
+
+{% block form_fields %}
+    <label for="email" class="form-label">Email</label>
+    <input id="email" type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+
+    <label for="password" class="form-label">Password</label>
+    <input id="password" type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+{% endblock %}
