@@ -141,9 +141,9 @@ def login():
             return redirect("/login")
 
         # Validate user verification
-        if user["is_verified"] == 0:
-            flash("Please verify your email before logging in.")
-            return redirect("/login")
+        ### if user["is_verified"] == 0:
+        ###    flash("Please verify your email before logging in.")
+        ###    return redirect("/login")
 
         # Check password
         if not check_password_hash(user["password_hash"], password):
