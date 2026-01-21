@@ -105,7 +105,7 @@ def register():
             "verify_email", token=token, _external=True
         )
 
-        send_verification_email(email, verify_url)
+        ### send_verification_email(email, verify_url)
 
         flash("Registration successful! Please check your email to verify your account.")
         return redirect("/login")
