@@ -38,11 +38,9 @@ def send_verification_email(to_email, verify_url):
     email_address = current_app.config.get("EMAIL_ADDRESS")
     email_password = current_app.config.get("EMAIL_PASSWORD")
 
-    # If email in not configured
+    # If email is not configured
     if not email_address or not email_password:
-        print("⚠ Email not configured. Verification link:")
-        print(verify_url)
-        return
+        raise RuntimeError("Email credentials not configured in environment variables")
 
 
     msg = EmailMessage()
